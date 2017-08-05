@@ -1,0 +1,39 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> {if $id}Sửa hướng dẫn{else}Thêm tin tức{/if}
+</h6>
+
+<a href="{site_url("admin/news")}" class="btn btn-success" style="float: right; margin-top: 12px; margin-left: 19px;"><i class="icon-th-list icon-white"></i> Danh sách</a>
+<div class="row-fluid">
+	<div class="span12">
+		{if $notice}
+		<div class="alert alert-success"><button data-dismiss="alert" class="close" type="button">×</button>{$notice}</div>
+		{/if}
+		{$form_edit}
+
+			<input type="hidden" value="{$id}" name="id"/>
+			<label>Tiêu đề</label>
+		    <input type="text" id="title" value="{$data.title}" name="title" class="span6"/>
+            
+		    <label>Url fix cứng</label>
+		    <input type="text" id="slug" placeholder="{site_url()}[url]" value="{$data.url_fix}" name="url_fix" class="span6"/>
+    
+            <label>Miêu tả</label>
+            <textarea name="description" style="width: 450px;height:50px;">{$data.description}</textarea>
+            
+            <label>Ảnh đại diện</label>
+            <input type="file" name="image" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image}" width="80" height="80" />
+            {/if}
+            <label>Nội dung</label>
+		    <textarea id="content" name="content" class="span9 editor">{$data.content}</textarea>
+		    <label class="checkbox">
+		      	<input type="checkbox" name="status" value="1"{if $data.active == 1} checked="checked"{/if} /> Hoạt động
+		    </label>
+		    <div class="control-group" style="text-align: center">
+    			<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Lưu</button>
+		    </div>
+		</form>
+	</div>
+</div>
+<div class="fix"></div>

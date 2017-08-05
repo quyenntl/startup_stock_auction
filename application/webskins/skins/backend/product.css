@@ -1,0 +1,13 @@
+#modal-crop-img {
+    margin-left: -500px;
+    top: 40%;
+    width: 1000px;
+}
+#modal-crop-img {
+  overflow-y: hidden !important;
+  position: absolute !important;
+  top: 50%;
+}
+#modal-crop-img .modal-body {
+  max-height: none;
+}

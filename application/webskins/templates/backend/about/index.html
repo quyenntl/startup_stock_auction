@@ -1,0 +1,127 @@
+<h6 class="title">
+    <i class="icon-user"></i>
+    Quản trị Ảnh
+</h6>
+    <div class="fix"></div>
+    <a href="{site_url("admin/about/form")}" class="btn btn-success" style="margin-bottom: 12px;"><i class="icon-plus icon-white"></i> Thêm mới ảnh</a>
+
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th><i class="icon-book"></i> Miêu tả</th>
+            <th><i class="icon-time"></i> Thời gian tạo</th>            
+            <th><i class="icon-th-list"></i>Ảnh đại diện</th>
+            <th><i class="icon-th-list"></i>Thứ tự</th>
+            <th style="width: 128px;"><i class="icon-wrench"></i> Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = item key = key}
+        <tr>
+            <td>{$offset + $key +1}</td>
+            <td><a href="admin/about/form/{$item.id}">{$item.description|truncate:90}</a></td>
+            <td>{$item.time_create|date_format:"%d/%m/%y %H:%M:%S"}</td>            
+            <td>
+                {imagesize src=$item.image width=60 height=60 source='img_about' default='default_300_300.png'}            
+            </td>
+            
+            <td  class="blue editable" lang="{$item.id}">
+                    {$item.ordering}            
+            </td>
+            <td>
+                <a href="admin/about/form/{$item.id}" class="btn btn-info"><i class="icon-edit icon-white"></i></a>
+                <a href="javascript:;" class="btn lock-guide {if $item.active == 1}btn-success{else}btn-danger{/if}" data-id="{$item.id}" data-placement="top" rel="tooltip" data-original-title="Disable/Enable" data-id="{$item.id}" data-status="{$item.active}"><i class="icon-lock icon-white"></i></a>
+
+                <a href="{site_url('admin/about')}?cmd=del&id={$item.id}" title="Xóa" onclick="if(!confirm('Bạn có chắc chắn muốn xóa ảnh này không?')) return false;" class="btn lock btn-danger" data-placement="top" rel="tooltip" data-original-title="Xóa"><i class="icon-lock icon-white"></i></a>
+                
+                
+                
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>
+<div style="text-align:right; color: #0088CC">
+    <i class="icon-list-alt"></i> Tổng số: {$total_data} kết quả
+</div>
+<div class="fix"></div>
+
+<!-- Modal Add user -->
+<div id="guide-cat-modal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 700px; margin-left: -350px;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5>Danh mục hướng dẫn</h5>
+    </div>
+
+    
+        <div class="modal-body">
+            <div style="margin-bottom: 10px;"></div>
+            <div class="row-fluid">
+                <div class="span12">
+                    {$form_cat}
+                    <div class="result-update" style="margin-bottom: 10px; text-align: left;">
+                    </div> 
+                    <div class="control-group">
+                        <div class="input-prepend">
+                            <span class="add-on" style="width: 137px;">Tên danh mục</span>
+                            <input type="text" id="cat_name" value="" name="cat_name" placeholder="Tên danh mục">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="input-prepend">
+                            <span class="add-on">Đường dẫn thân thiện</span>
+                            <input type="text" id="cat_slug" value="" name="cat_slug" placeholder="Đường dẫn thân thiện">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="input-prepend">
+                            <span class="add-on" style="width: 137px;">Vị trí ưu tiên</span>
+                            <input type="text" id="cat_position" value="" name="cat_position" placeholder="Thứ tự hiển thị">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="checkbox">
+                            <input type="checkbox" name="cat_status" value="1" checked="checked"/> Hoạt động
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <button class="btn btn-success add-cat-click cancel">Thêm</button>
+                    </div>
+                    </form>
+                </div>
+                <table class="table table-bordered table-striped tablesorter">
+                    <thead>
+                        <tr>
+                            <th style="width:230px;">Tên danh mục</th>
+                            <th style="width:230px;">Url thân thiện</th>
+                            <th>Vị trí</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cat-guide-tbody">
+                        {foreach from = $data_cat item = item key = key}
+                        <tr>
+                            <td class="editable"><a href="javascript:;" class="edit-guide-cat" data-id="{$item.id}" data-type-edit="name">{$item.name}</a></td>
+                            <td><a href="javascript:;" class="edit-guide-cat" data-id="{$item.id}" data-type-edit="slug">{$item.slug}</a></td>
+                            <td><a href="javascript:;" class="edit-guide-cat" data-id="{$item.id}" data-type-edit="position">{$item.position}</a></td>
+                            <td>
+                                <a href="#" class="btn lock-cat {if $item.status == 1}btn-success{else}btn-danger{/if}" data-id="{$item.id}" data-placement="top" rel="tooltip" data-original-title="Khóa/Bỏ khóa" data-id="{$item.id}" data-status="{$item.status}"><i class="icon-lock icon-white"></i></a>
+                                <a data-original-title="Xóa" rel="tooltip" data-placement="top" data-id="{$item.id}" class="btn del-cat btn-danger"><i class="icon-trash icon-white"></i></a>
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">               
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Đóng</button>
+        </div>
+</div>

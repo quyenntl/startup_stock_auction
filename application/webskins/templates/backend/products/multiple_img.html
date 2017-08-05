@@ -1,0 +1,52 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> Upload thêm ảnh
+</h6>
+<div class="row-fluid">
+    {$begin_form}
+    <input type="hidden" name="new_id" value="{$id}" />
+    {$id}
+    <div class="span4">        
+        <div class="control-group">
+            <label>Ảnh 1</label>
+            <input type="file" name="image1" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image1}" width="80" height="80" />
+            {/if}
+        </div>
+        <div class="control-group">
+            <label>Ảnh 2</label>
+            <input type="file" name="image2" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image2}" width="80" height="80" />
+            {/if}
+        </div>
+                 
+    </div>    
+    <div class="span4">
+        <div class="control-group">
+            <label>Ảnh 3</label>
+            <input type="file" name="image3" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image3}" width="80" height="80" />
+            {/if}
+        </div>
+        <div class="control-group">
+            <label>Ảnh 4</label>
+            <input type="file" name="image4" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image4}" width="80" height="80" />
+            {/if}
+        </div>        
+        <div class="control-group">
+            <label>Ảnh 5</label>
+            <input type="file" name="image5" />
+            {if $data.image}
+            <img src="{store_data_url()}news/{$data.image5}" width="80" height="80" />
+            {/if}
+        </div>        
+    </div>
+</div>
+<div class="control-group" style="text-align: left">
+	<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Lưu</button>
+</div>
+{$end_form}

@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /VP9/application
+RewriteCond $1 !^(index\.php|ajax|crawl|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(.*)$ index.php/$1 [L]
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+
+RewriteRule ^ajax.php/([a-zA-Z\_]+)/([a-zA-Z\_]+) ajax.php?path=$1&func=$2&%{QUERY_STRING} [L]

@@ -1,0 +1,82 @@
+
+
+
+<div class="panel panel-primary" style="margin:20px;">
+    <div class="panel-heading">
+        <div class="row">
+             <div class="col-md-6"> 
+            <h3 class="panel-title">Đấu giá</h3>
+            </div>
+             <div class="col-md-6 box-count-time">
+                <h3 class="panel-title">Thời gian còn lại: <span id="getting-started"></span> </h3>
+				<input type="hidden" id="count_time"  value="{$count_time}" />
+             </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-inline">
+            
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-6">                        
+                    <div class="form-group ">
+                        <label for="years">Giá đặt mua 01 cổ phần (Đơn vị: VND): </label>
+                        <input type="text" class="form-control input-sm" id="price" placeholder="">
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="years">Số cổ phần muốn mua:</label>
+                         <input type="text" class="form-control input-sm" id="quantity" placeholder="">
+                    </div>
+                  
+                    <div class="form-group" style="margin-top: 20px;display:block;">
+                        <label>Trị giá đầu tư</label>
+                        <span id="investment_val" class="form-control"></span>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;margin-bottom:20px;display:block;">
+						<input type="checkbox"  id="price_fix" name="price_fix" data-toggle="toggle">
+                        <!--<input type="radio" id="price_fix" name="price_fix" /> --> <label class="form-control"> Đặt theo giá cao nhất</label>
+                    </div>
+                                     
+                    <div class="form-group col-md-12 col-sm-12">
+                        <div class="notice"></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">                    
+                    <div class="form-group" style="padding-left: 240px;">
+                        <label for="months">Tên nhà đầu tư: {$user_info.fullname}</label>
+                        <span class="help-block"><b>Ký hiệu NĐT:</b> {$user_info.ndt_id}</span> {if $currentBid.user_code != ""}
+                        <span class="help-block"><b>Giá hiện tại:</b> {($currentBid.price)|number_format:0:".":","} VND</span>
+                        <span class="help-block"><b>Số lượng cổ phần đã đặt:</b> {$currentBid.num_stocks|number_format:0:".":","}
+                        </span>
+                        <span class="help-block"><b>Số tiền ký quỹ:</b> {($user_info.sig_deposit_amt)|number_format:0:".":","} VND</span>
+                         {else}
+                        <span class="help-block">Bạn chưa đặt giá</span> {/if}
+                    </div>
+                </div>
+            
+            </div>
+           
+            <div class="col-md-12 col-sm-12" id="addblock">
+                <div class="form-group col-md-3 col-sm-3">
+                    <input type='button' class="btn btn-primary" value="Đặt lệnh" id="bid" />
+                </div>
+            </div>
+            
+            <div class="col-md-12 col-sm-12" id="deceased">
+                <div class="form-group col-md-12 col-sm-12">
+                    <label for="name">Giá 01 cổ phần được đặt mua cao nhất hiện tại:  {($max_price)|number_format:0:".":","} VND</label>
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    <label for="gender">Giá khớp tạm thời:
+						{($temp_price)|number_format:0:".":","} VND					
+					</label>
+					
+                </div>
+            </div>
+        </form>
+    </div>
+    </body>
+
+    </html>

@@ -1,0 +1,26 @@
+<div id="metaslider_container">
+    <div class="slider-wrapper">
+        <div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <img src="{$skin_front}/image_fe/slider1.jpg" alt="" class="" width="1000" height="347">
+            <img src="{$skin_front}/image_fe/slider2.jpg" alt="" class="" width="1000" height="347">
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        $('#slider').nivoSlider({
+            boxCols:7,
+            boxRows:5,
+            pauseTime:2000,
+            effect:"random",
+            controlNav:false,
+            directionNav:true,
+            pauseOnHover:true,
+            animSpeed:600,
+            prevText:"",
+            nextText:"",
+            slices:15,
+        }
+        );
+    </script>

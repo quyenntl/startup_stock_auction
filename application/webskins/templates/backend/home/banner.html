@@ -1,0 +1,152 @@
+<h6 class="title"><i class="icon-user"></i>Quản trị Home Banner </h6>
+
+{$msg}
+<style>
+form {
+    margin: 0 !important;
+}
+</style>
+<input type="hidden" id="base_url" name="base_url" value="{admin_url('home_banner')}"/>
+
+
+{$begin_form}
+<div class="box-content" id="khung-edit">
+    <h6 class="title"><i class="icon-wrench"></i> &nbsp;Thêm/Sửa Mã Coupon</h6>
+    <div class="search-form" style="margin-top: 20px;">
+            <input type="hidden" id="action" name="action" value="fail"/>
+            <input type="hidden" id="id_edit" name="id_edit" value="{$post.id}"/>
+            <div class="span12">
+            
+                <div class="row-fluid">
+                    <div class="control-group">
+                        <label class="control-label">Tiêu đề</label>
+                        <div class="controls">
+                            <input value="{$post.title}" class="span8" id="title" name="title" placeholder="Nhập tiêu đề banner trang chủ" type="text"/>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Link chi tiết</label>
+                        <div class="controls">
+                            <input value="{$post.url}" class="span8" id="link" name="link" placeholder="Nhập link chi tiết của banner" type="text"/>
+                        </div>
+                    </div>
+                    
+                </div>  
+                    
+                 <div class="row-fluid">
+                    <div class="span6">
+                    
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Ngày bắt đầu</label>
+                            <div class="input-prepend" style="margin-left: 20px;">
+                                <span class="add-on"><i class="icon-calendar"></i></span>
+                                <input style="width: 179px;" id="time_begin" value="{$post.start_time|date_format:'%d-%m-%Y'}" name="time_begin" placeholder="ngày-tháng-năm" data-date-format="dd-mm-yyyy" type="text"/>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Ngày kết thúc</label>
+                            <div class="input-prepend" style="margin-left: 20px;">
+                                <span class="add-on"><i class="icon-calendar"></i></span>
+                                <input style="width: 179px;" id="time_end" value="{$post.end_time|date_format:'%d-%m-%Y'}" name="time_end" placeholder="ngày-tháng-năm" data-date-format="dd-mm-yyyy" type="text"/>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Mở cửa sổ mới</label>
+                            <div class="btn-group" style="margin-left: 20px;">
+                                <input value="1" id="target" name="target" type="checkbox" {if $post.target != 0} checked="" {/if}/>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Kích hoạt</label>
+                            <div class="btn-group" style="margin-left: 20px;">
+                                <input value="1" id="active" name="active" type="checkbox" {if $post.active != 0 || $post.active == ''}  checked="" {/if}/>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                    <div class="span6" style="height: 160px; text-align: center; vertical-align: middle;">
+                        <div id="upload-notice"></div>
+                         <div class="control-group" style="height: 130px;padding-top: 25px;">
+                            <span style="height: 140px;display: inline-block;margin: auto;width: 324px;color: #B3B3B3;background: none repeat scroll 0 0 #D4D4D4;vertical-align: middle;text-shadow: 0 1px 0 #FFFFFF;font-size: 30px;" id="result-view">
+                                 {if $post.image != ''}
+                                    <img src="{$staticlink}banner/{$post.image}" height="140px"/>
+                                 {else}
+                                    <br /><br /><br /> Ảnh Banner
+                                 {/if}
+                            </span>
+                         </div>
+                         <div class="control-group">
+                            <span class="btn btn-large btn-danger fileinput-button btn-choose-img" style="margin-top: 20px;">
+                                <i class="icon-picture icon-white"></i>
+                                <span>Chọn ảnh</span>
+                                <input name="banner_image" id="banner_image" type="file"/> 
+                                <input name="image" id="image" type="hidden" value="{$post.image}"/>                   
+                            </span>
+                         </div>
+                         
+                    </div>
+                </div>
+                
+            </div>    
+
+            <div class="control-group" style="margin-left: 20px;">
+                <div class="controls">
+                <button class="btn btn-success btn-large" type="submit"><i class="icon-plus-sign icon-white"></i> &nbsp;Thêm banner</button>
+                </div>
+            </div>
+
+    </div>
+</div>
+</form>
+
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th style="width:25px;text-align: center;">#</th>
+            <th><i class="icon-font"></i> Tiêu đề banner</th>
+            <th style="width:250px"><i class="icon-picture"></i> Ảnh banner</th>
+            <th style="width:150px"><i class="icon-calendar"></i> Thời gian</th>
+            <th style="width: 26px; text-align: center"><i class="icon-wrench"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach $data as $k => $value}
+         <tr>
+            <td style="text-align: center;"><strong>{if $k < 10}0{/if}{$k + 1}</strong></td>
+            <td><a href="{$value.url}" target="_blank"><strong>{$value.title}</strong></a></td>
+            <td>
+              {imagesize src=$value.image source='banner' width='250'}
+            </td>
+            <td>
+              • Ngày tạo: <strong>{$value.created_time|date_format:"%d/%m/%Y"}</strong> <br />
+              • Bắt đầu: <strong>{$value.start_time|date_format:"%d/%m/%Y"}</strong> <br />
+              • Kết thúc: <strong>{($value.end_time - 86400)|date_format:"%d/%m/%Y"}</strong> <br />
+            </td>
+            <td style="line-height: 40px;">
+                    <a class="btn btn-success js_edit" href="{admin_url()}home_banner/index/edit/{$value.id}" data-placement="left" rel="tooltip" data-original-title="Sửa"><i class="icon-edit icon-white"></i></a>
+                    {if $value.active != 1}
+                        <a class="btn btn-primary js_accept" ref="{$value.id}" href="javascript:void(0);" data-placement="left" rel="tooltip" data-original-title="Duyệt"><i class="icon-thumbs-up icon-white"></i></a>
+                    {else}
+                        <a class="btn btn-danger js_unaccept" ref="{$value.id}" href="javascript:void(0);" data-placement="left" rel="tooltip" data-original-title="Bỏ Duyệt"><i class="icon-thumbs-down icon-white"></i></a>
+                    {/if} 
+                    <a href="{admin_url()}home_banner/index/del/{$value.id}" class="btn btn-warning" onclick="return confirm('Bạn muốn xóa mã quyền này không?')" data-placement="left" rel="tooltip" data-original-title="Xóa"><i class="icon-trash icon-white"></i></a>
+            </td>
+        </tr>
+    {/foreach}    
+    </tbody>
+</table>
+
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+
+<div class="fix"></div>

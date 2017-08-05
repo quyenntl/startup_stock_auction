@@ -1,0 +1,12 @@
+<div class="products">
+    {foreach from=$list_news item=one}
+        <div class="col col_14 product_gallery {if $one.i mod 3 == 0}no_margin_product{else} {/if}">
+            <a href="{detail_new($one.id,$one.title)}"><img alt="" src="{$one.img_url}"></a>
+            <a href="{detail_new($one.id,$one.title)}"><h3>{$one.title}</h3></a>
+            <p>{$one.description|truncate:30}</p>
+        </div>
+    {/foreach}
+    <div class="paging">
+        {$pagging}
+    </div>
+</div>

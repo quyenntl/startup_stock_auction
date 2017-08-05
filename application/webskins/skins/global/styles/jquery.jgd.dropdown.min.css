@@ -1,0 +1,30 @@
+.jgd-dropdown a,.jgd-dropdown a:visited,.jgd-dropdown a:active,.jgd-dropdown a:hover{color:#696969;text-decoration:none;outline:none;}
+.jgd-dropdown a:hover{color:#696969;}
+.jgd-dropdown dd{position:relative;}
+.jgd-dropdown dd ul{background-color:#FFF;border:1px solid #e6e6e6;color:#696969;display:none;z-index:11;left:0;padding:0;position:absolute;top:1px;width:224px;list-style:none;-moz-box-shadow:0 0 5px #DBDBDB;border-top:none;-webkit-box-shadow: 0 0 5px #DBDBDB;box-shadow: 0 0 5px #DBDBDB;}
+.jgd-dropdown dd ul li a{padding:5px;display:block;border-bottom:1px solid #e6e6e6;}
+.jgd-dropdown dd ul li a:hover{text-decoration:underline;color:#222222;}
+.jgd-dropdown dd ul li.hide_selected{display:none;}
+/*.jgd-dropdown dd ul li.item-even a{background-color:#fafafa;}
+.jgd-dropdown dd ul li.item-odd a{background-color:#f5f5f5;}
+*/
+.jgd-dropdown dd ul li.item-even a, .jgd-dropdown dd ul li.item-odd a {border-bottom:1px solid #e6e6e6;font-size:11px;padding:2px 10px !important;margin-top:0 !important;}
+.jgd-dropdown dd ul li.item-even a:hover, .jgd-dropdown dd ul li.item-odd a:hover {background:#f3f3f3;color:#1089c2;}
+.jgd-dropdown dd,.jgd-dropdown dt,.jgd-dropdown ul{margin:0;padding:0;}
+
+/*.jgd-dropdown dt a{display:block;padding-right:20px;border:0px solid #a9a9a9;width:210px;padding:7px;}*/
+.jgd-dropdown dt a span{cursor:pointer;display:block;}
+.jgd-dropdown dt a:hover{color:#696969;border:0px solid #a9a9a9;}
+.jgd-dropdown span.value{display:none;}
+.jgd-dropdown.jgd-countries .flag a{padding:4px 4px 4px 32px;background-image:url(gfx/countries.png);background-repeat:no-repeat;background-position:-24px 0;font-size:0.9em;line-height:18px;}
+.jgd-dropdown.jgd-countries .flag.BR a{background-position:0 0;}
+.jgd-dropdown.jgd-countries .flag.DE a{background-position:0 -48px;}
+.jgd-dropdown.jgd-countries .flag.FR a{background-position:0 -24px;}
+.jgd-dropdown.jgd-countries .flag.IN a{background-position:0 -72px;}
+.jgd-dropdown.jgd-countries .flag.JP a{background-position:0 -96px;}
+.jgd-dropdown.jgd-countries .flag.RS a{background-position:0 -120px;}
+.jgd-dropdown.jgd-countries .flag.UK a{background-position:0 -144px;}
+.jgd-dropdown.jgd-countries .flag.US a{background-position:0 -168px;}
+.jgd-dropdown.jgd-countries dd ul{width:246px;}
+.jgd-dropdown.jgd-countries dt{width:244px;}
+.jgd-dropdown.jgd-countries dt a{padding:4px 4px 4px 32px;font-weight:bold;}

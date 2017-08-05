@@ -1,0 +1,52 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> {if $id}Edit{else}Add new{/if}
+</h6>
+
+<a href="{site_url("admin/config_sys")}" class="btn btn-success" style="float: right; margin-top: 12px; margin-left: 19px;"><i class="icon-th-list icon-white"></i> List</a>
+<div class="row-fluid">
+	<div class="span12">
+		{if $notice}
+		<div class="alert alert-success"><button data-dismiss="alert" class="close" type="button">×</button>{$notice}</div>
+		{/if}
+		{$form_edit}
+         <div class="row-fluid">
+         <div class="span4">
+            <div class="control-group">
+			<input type="hidden" value="{$id}" name="id"/>    
+            <label>Name</label>
+            <input type="text" required="" value="{$data.name}" name="name" placeholder="Name" />
+            </div>              
+            <div class="control-group">
+            <label>Key</label> 
+            <input type="text" required="" value="{$data.key}" name="key" placeholder="Key" />
+            </div>
+              <div class='control-group' style="text-align: center">
+    			<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Save</button>               
+		    </div>
+            </div>
+            <!--
+             <div class="control-group"> 
+                Status <input type="checkbox" value="1" {if $data.status==1}checked{/if} name="status"/>                
+            </div> -->
+               
+	
+       
+           
+            <div class="span4">            
+            <div class="control-group">
+             <label>Value</label> 
+            <input type="text" required="" value="{$data.value}" name="value" placeholder="Value" />
+            </div>  
+            
+          
+               
+            </div>
+            
+            
+            </div>
+            </div>
+		</form>    
+    
+
+</div>
+<div class="fix"></div>

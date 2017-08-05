@@ -1,0 +1,26 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+ #deceased {
+        background-color: #cefda7;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .remove_field {
+        float: right;
+        cursor: pointer;
+        position: absolute;
+    }
+    
+    .remove_field:hover {
+        text-decoration: none;
+    }    
+    #addblock{
+        margin-bottom: 20px;}
+	
+	.box-count-time{float:right;text-align:right;}  
+	#getting-started{font-weight:bold;font-size:18px;color:#ffff21;}
+
+.home-box-count-time{position: fixed;right:10px;top: 150px;background-color: #337AB7;color: #fff;width:200px;}

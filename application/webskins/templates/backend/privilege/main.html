@@ -1,0 +1,63 @@
+<h6 class="title"><i class="icon-user"></i>Quản trị Mã Quyền </h6>
+
+{$msg}
+<div class="box-content" id="khung-edit">
+    <h6 class="title"><i class="icon-wrench"></i> &nbsp;Thêm/Sửa Mã Quyền</h6>
+    <div class="search-form" style="margin-top: 20px;">
+       {$begin_form}
+            <input type="hidden" id="id_edit" name="id_edit" value="{$id_edit}"/>
+            <div class="span12">
+                 <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Tên Quyền</label>
+                            <div class="controls">
+                                <input type="text" id="description" style="width: 400px" name="description" placeholder="Nhập tên quyền"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="control-group">
+                        <label class="control-label" for="fullname">Mã Quyền</label>
+                        <div class="controls">
+                            <input type="text" id="code" style="width: 400px" name="code" placeholder="Nhập mã quyền"/>
+                        </div>
+                    </div>
+            </div>    
+
+
+            <div class="control-group" style="margin-left: 20px;">
+                <div class="controls">
+                <button class="btn btn-success" id="addmenu" type="submit"><i class="icon-plus-sign icon-white"></i> &nbsp;Thêm Mã Quyền</button>
+                </div>
+            </div>
+            
+        {$end_form}
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th style="width:50px;">Thứ tự</th>
+            <th><i class="icon-home"></i> Tên Quyền</th>
+            <th><i class="icon-warning-sign"></i> Mã Quyền</th>
+            <th style="width: 85px; text-align: center"><i class="icon-wrench"></i> Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach $data as $k => $value}
+         <tr>
+            <td style="text-align: center;"><strong>{if $k < 10}0{/if}{$k + 1}</strong></td>
+            <td><strong>{$value.description}</strong></td>
+            <td><strong>{$value.code}</strong></td>
+            <td>
+                    <a class="btn btn-success js_edit" href="privilege/edit/{$value.id}"><i class="icon-edit icon-white"></i></a>
+                    <a href="{admin_url()}privilege/index/del/{$value.id}" class="btn btn-warning" onclick="return confirm('Bạn muốn xóa mã quyền này không?')"><i class="icon-trash icon-white"></i></a>
+            </td>
+        </tr>
+    {/foreach}    
+    </tbody>
+</table>
+
+<div class="fix"></div>

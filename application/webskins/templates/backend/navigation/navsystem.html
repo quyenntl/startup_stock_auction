@@ -1,0 +1,115 @@
+<h6 class="title"><i class="icon-user"></i>Quản trị Menu System </h6>
+
+{$msg}
+<div class="box-content" id="khung-edit">
+    <h6 class="title"><i class="icon-wrench"></i> &nbsp;Add/Edit Menu</h6>
+    <div class="search-form" style="margin-top: 20px;">
+       {$begin_form}
+            <input type="hidden" id="id_edit" name="id_edit" value="{$id_edit}"/>
+            <div class="span12">
+                 <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Name Menu</label>
+                            <div class="controls">
+                                <input type="text" id="name" name="name" required="" placeholder="Name Menu view"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label">Ordering</label>
+                            <div class="controls">
+                                <input type="text" id="order" name="order" required="" placeholder="Ordering"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="control-group">
+                        <label class="control-label">Parent menu</label>
+                        <div class="controls">
+                            <select id="category" name="category">
+                                <option value="0">- Parent menu</option>
+                            {foreach $data as $value}
+                                <option {if $id_edit == $value.id} selected="selected"{/if} value="{$value.id}">-- {$value.text}</option>
+                                {if $value.children}
+                                    {foreach $value.children as $values}
+                                    <option {if $id_edit == $values.id} selected="selected"{/if} value="{$values.id}">-- -- {$values.text}</option>
+                                    {/foreach}
+                                {/if}
+                            {/foreach}
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="input-prepend">
+                        <div class="control-group">
+                            <label class="control-label">Link menu</label>
+                            <div class="controls">
+                                <span class="add-on">{admin_url()}</span>
+                                <input class="span6" id="link" name="link" type="text" required="" placeholder="Url-Link"/>
+                            </div>
+                        </div>                        
+                    </div>
+
+            </div>    
+
+
+            <div class="control-group" style="margin-left: 20px;">
+                <div class="controls">
+                <button class="btn btn-success" id="addmenu" type="submit"><i class="icon-plus-sign icon-white"></i> &nbsp;Add new menu</button>
+                </div>
+            </div>            
+        {$end_form}
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th style="width:50px;">Ordering</th>
+            <th colspan="6"><i class="icon-home"></i> Menu name</th>
+            <th style="width: 85px; text-align: center"><i class="icon-wrench"></i> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach $data as $k => $value}
+         <tr>
+            <td><strong>{$k + 1}.{$value.order}</strong></td>
+            <td colspan="{($col_total - $value.level)}"><strong>{$value.text}</strong></td>
+            <td>
+                    <a class="btn btn-success js_edit" href="navsystem/edit/{$value.id}"><i class="icon-edit icon-white"></i></a>
+                    <a href="{admin_url()}navsystem/index/del/{$value.id}" class="btn btn-warning" onclick="return confirm('Do you want delete this menu?')"><i class="icon-trash icon-white"></i></a>
+            </td>
+        </tr>
+        
+        {if $value.children}
+            {foreach $value.children as $i => $values}
+                 <tr>
+                    <td colspan="{$values.level}"></td>
+                    <td style="width: 60px;border-left: none;">{$k+1}.{$i+1}</td>
+                    <td colspan="{($col_total - 1 - $values.level)}">{$values.text}</td>
+                    <td>
+                        <a class="btn btn-success js_edit" href="navsystem/edit/{$values.id}"><i class="icon-edit icon-white"></i></a>
+                        <a href="{admin_url()}navsystem/index/del/{$values.id}" class="btn btn-danger" onclick="return confirm('Do you want delete this menu?')"><i class="icon-ban-circle icon-white"></i></a>
+                    </td>
+                </tr>                
+                {if $values.children}
+                    {foreach $values.children as $val}
+                             <tr>
+                                <td colspan="{$val.level}"></td>
+                                <td style="width: 60px;border-left: none;">{$k + 1}.{$i + 1}.{$val.order}</td>
+                                <td colspan="{($col_total - 1 - $val.level)}">{$val.text}</td>
+                                <td>
+                                        <a class="btn btn-success js_edit" href="navsystem/edit/{$val.id}"><i class="icon-edit icon-white"></i></a>
+                                        <a href="{admin_url()}navsystem/index/del/{$val.id}" class="btn btn-danger" onclick="return confirm('Do you want delete this menu?')"><i class="icon-trash icon-white"></i></a>
+                                </td>
+                            </tr>
+                        {/foreach}
+                {/if}                
+            {/foreach}
+        {/if}
+    {/foreach}    
+    </tbody>
+</table>
+<div class="fix"></div>

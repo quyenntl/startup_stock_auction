@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Email marketing</title>
+</head>
+<body>
+	<table cellpadding="0" cellspacing="0" border="0" width="680px" align="center">
+    	<tr>
+        	<td style="font-size:12px;color:#666;font-family:Arial, Helvetica, sans-serif;padding:5px 0" align="center">Bạn nhận được email này vì bạn đã đăng ký nhận thông tin từ sàn khuyến mại 1top.vn</td>
+        </tr>
+        <tr>
+        	<td style="box-shadow:0 0 5px #ccc;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;background:#f1f1f1">
+            	<table cellpadding="0" cellspacing="0" border="0" width="680px" align="center" >
+                	<tr style="background:#ececec;box-shadow:0 0 5px #ccc">
+                    	<td width="218px" align="center" >
+                        	<div style="width:218px;height:90px;text-align:center;vertical-align:middle;line-height:90px;text-align:center"><a href="http://1top.vn" target="_blank"><img src="{$skin_frontend}images/logo1top.png" alt="LOGO" border="0" style="margin-top:10px"/></a></div>
+                        </td>
+                        <td width="462px" style="color:#666" colspan="2">
+                        	<p style="font-size:23px;margin:0">Từ chối nhận email chỉ bằng 1 click <a href="javascript:;" style="text-decoration:none;color:#3366ff">tại đây</a></p>
+                            <p style="margin:0">Nếu bạn báo cáo thư rác thì chúng tôi không thể gửi thông tin giao dịch cho bạn</p>
+                        </td>
+                    </tr>
+                    {foreach from=$list_item_info item=arr key=k}
+                    {if $k%2 == 0}
+                        <tr >                        
+                        	<td style="width:220px;border-bottom:1px solid #b7b7b7;padding: 5px 0;">
+                            	<div style="width:220px;height:240px;line-height:240px;text-align:center">
+                                    <a href="{item_url({$list_item_info[$k]['item_code']},{$list_item_info[$k]['title_short']})}" target="_blank">
+                                        {imagesize src=$list_item_info[$k]['image'] width=208 height=228 source='deals' default='default_300_300.png' alt=$list_item_info[$k]['title_short']}                                        
+                                    </a>
+                                </div>
+                            </td>
+                            <td style="width:220px;padding: 10px;border-bottom:1px solid #b7b7b7" valign="top">
+                            	<div>
+                                	<div><img src="{$skin_frontend}images/icon-left.png" alt=""/></div>
+                                    <div>
+                                    	<p style="margin:0">
+                                            <a href="{item_url({$list_item_info[$k]['item_code']},{$list_item_info[$k]['title_short']})}" target="_blank" style="color:#333;font-weight:bold;text-decoration:none">
+                                                Giảm <span style="color:#ff0000;font-size:18px;margin:0">{math equation="ceil((x - y)*100/x)" x={$list_item_info[$k]['cost']} y={$list_item_info[$k]['price']} format="%.0f"}%</span>, {$list_item_info[$k]['title_long']}
+                                            </a>
+                                        </p>                                       
+                                        <p style="color:#ff0000;font-size:20px;margin:0">                                            
+                                            {$list_item_info[$k]['price']|money_format} VNĐ
+                                        </p>
+                                    </div>
+                                </div>
+                                {if $list_item_info[$k+1]['item_code'] != ''}
+                                <div>
+                                    <div>                                  	    
+                                    	<p style="margin:8px 0">
+                                            <a href="{item_url({$list_item_info[$k+1]['item_code']},{$list_item_info[$k+1]['title_short']})}" target="_blank" style="color:#333;font-weight:bold;text-decoration:none">
+                                                Giảm <span style="color:#ff0000;font-size:18px;margin:0">{math equation="ceil((x - y)*100/x)" x={$list_item_info[$k+1]['cost']} y={$list_item_info[$k+1]['price']} format="%.0f"}%</span>, {$list_item_info[$k+1]['title_long']}
+                                            </a>
+                                        </p>                                        
+                                        <p style="color:#ff0000;font-size:20px;margin:0;text-align:right">
+                                            {$list_item_info[$k+1]['price']|money_format} VNĐ 
+                                        </p>
+                                    </div>
+                                    <div style="text-align:right"><img src="{$skin_frontend}images/icon-right.png"/></div>
+                                </div>
+                                {/if}
+                            </td>
+                            {if $list_item_info[$k+1]['item_code'] != ''}
+                            <td style="width:220px;border-bottom:1px solid #b7b7b7;padding: 5px 0;">
+                            	<div style="width:220px;height:240px;line-height:240px;text-align:center">
+                                    <a href="{item_url({$list_item_info[$k+1]['item_code']},{$list_item_info[$k+1]['title_short']})}" target="_blank">                                        
+                                        {imagesize src=$list_item_info[$k+1]['image'] width=208 height=228 source='deals' default='default_300_300.png' alt=$list_item_info[$k+1]['title_short']}
+                                    </a>
+                                </div>
+                            </td>
+                            {/if}
+                        </tr>
+                    {/if}
+                    {/foreach}                
+					<tr>
+                    	<td colspan="3" style="padding:10px 0">
+                        	<div style="width:334px;float:left;font-size:11px;color:#666;text-align:right">
+                            	Hà Nội: Tầng 12A, tòa nhà 18 Tam Trinh, quận Hai Bà Trưng.<br/>
+								Tel: 04 3632 1351 , Fax: 04-3632-0987.
+                            </div>
+                            <div style="width:334px;float:left;font-size:11px;color:#666;margin-left:12px">
+                            	TP.HCM: Lầu 3, tòa nhà VTC online, số 132 Cộng Hòa
+Phường 4, quận Tân Bình<br/>
+Tel: 08-6292-4346, Fax: 08-6292-0945.
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3" align="center">Từ chối nhận email chỉ bằng 1 click <a href="javascript:;" style="color:#3466ff;text-decoration:none">tại đây</a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

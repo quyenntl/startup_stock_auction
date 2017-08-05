@@ -1,0 +1,19 @@
+<main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope">
+    <div id="home-news">
+        <h1 class="heading">{$info_cate.name}</h1>
+        <ul class="product-list">
+        {foreach from=$list_product item=item}
+            <li class="product-item">
+                    <div class="product-img">
+                     <a class="img" title="{$item.name}" href="{detail_product($item.id,$item.name)}">
+                        <img src="{$item.img_url}" class="attachment-medium size-medium wp-post-image" alt="{$item.name}" width="300" height="224"></a> 
+                    </div>
+                <a class="product-title" href="{detail_product($item.id,$item.name)}" title="{$item.name}">{$item.name}</a>
+                <p class="price  gachngang">
+                    {$item.price|money_format} VNĐ    </p>
+                <p class="price">{$item.price_sale|money_format} VNĐ</p>    <a class="detail" href="{detail_product($item.id,$item.name)}" title="Chi tiết">Chi tiết</a>
+            </li>   
+        {/foreach}           
+        </ul><!--End .product-list-->
+    </div><!--End #news-wrap-->
+</main>

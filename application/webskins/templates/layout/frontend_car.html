@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="vi">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>{$page_title}</title>
+    <meta name="robots" content="noodp">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta name="description" content="{$meta_description}" />
+    <meta name="keywords" content="{$meta_keyword}" />
+    <base href="{base_url()}"/>
+    {$header_script}
+    <style type="text/css" id="custom-background-css">
+        body.custom-background { background-color: #f6f6f6; }
+    </style>
+</head>
+<body class="home blog custom-background sidebar-content" itemscope="itemscope" itemtype="http://schema.org/WebPage" cz-shortcut-listen="true">
+<div class="site-container">
+    {$header}
+<div class="site-inner">
+    {$slide_content}
+    
+<div class="content-sidebar-wrap">
+    {$main_content}
+
+    <!--left-->
+    <aside class="sidebar sidebar-primary widget-area">
+        {$sidebar_left}
+    </aside>
+<!--enDleft-->
+</div>
+</div>
+<div class="clear"></div>
+
+<div class="footer-widgets">
+    {$footer}
+    {$footer_script}
+</body>
+</html>

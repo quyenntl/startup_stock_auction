@@ -1,0 +1,130 @@
+<h6 class="title"><i class="icon-user"></i>Quản trị Category </h6>
+
+{$msg}
+<div class="box-content" id="khung-edit">
+    <h6 class="title"><i class="icon-wrench"></i> &nbsp;Thêm/Sửa Category</h6>
+    <div class="search-form" style="margin-top: 20px;">
+       {$begin_form}
+            <input type="hidden" id="id_edit" name="id_edit" value="{$id_edit}"/>
+            <div class="span12">
+                 <div class="row-fluid">
+                    <div class="control-group">
+                        <label class="control-label" for="fullname">Tên Category</label>
+                        <div class="controls">
+                            <input type="text" class="span8" id="name" name="name" placeholder="Tên Category"/>
+                        </div>
+                    </div>
+                </div>   
+            
+            
+                 <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Tên Không dấu</label>
+                            <div class="controls">
+                                <input type="text" id="name_ascii" name="name_ascii" placeholder="nhap-ten-khong-dau"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label">Danh mục</label>
+                            <div class="controls">
+                                <select id="category" name="category">
+                                    <option value="0">- Danh mục Chính</option>
+                                {foreach $data as $value}
+                                    <option {if $id_edit == $value.id} selected="selected"{/if} value="{$value.id}">-- {$value.text}</option>
+                                {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="control-group">
+                            <label class="control-label">Thứ tự</label>
+                            <div class="controls">
+                                <input type="text" id="order" name="order" placeholder="Thứ tự hiển thị"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">    
+                        <div class="control-group">
+                            <label class="control-label" for="fullname">Kích hoạt</label>
+                            <div class="controls">
+                                <input type="checkbox" id="active" name="active" checked="checked" value="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+            </div>    
+
+
+            <div class="control-group" style="margin-left: 20px;">
+                <div class="controls">
+                <button class="btn btn-success" id="addmenu" ><i class="icon-plus-sign icon-white"></i> &nbsp;Lưu lại</button>
+                </div>
+            </div>
+            
+        {$end_form}
+    </div>
+</div>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th style="width:50px;">Thứ tự</th>
+            <th colspan="6"><i class="icon-home"></i> Tên Menu</th>
+            <th style="width: 85px; text-align: center"><i class="icon-wrench"></i> Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach $data as $k => $value}
+         <tr>
+            <td><strong>{$k + 1}.{$value.order}</strong></td>
+            <td colspan="{($col_total - $value.level)}"><strong>{$value.text}</strong></td>
+            <td>
+                    <a class="btn btn-success js_edit" href="category/edit/{$value.id}"><i class="icon-edit icon-white"></i></a>
+                    <a href="{admin_url()}category/index/del/{$value.id}" class="btn btn-warning" onclick="return confirm('Bạn có chắc chắn là muốn xóa dữ liệu này?')"><i class="icon-trash icon-white"></i></a>
+            </td>
+        </tr>
+        
+        {if $value.children}
+            {foreach $value.children as $i => $values}
+                 <tr>
+                    <td colspan="{$values.level}"></td>
+                    <td style="width: 60px;border-left: none;">{$k + 1}.{$i + 1}</td>
+                    <td colspan="{($col_total - 1 - $values.level)}">{$values.text}</td>
+                    <td>
+                            <a class="btn btn-success js_edit" href="category/edit/{$values.id}"><i class="icon-edit icon-white"></i></a>
+                            <a href="{admin_url()}category/index/del/{$values.id}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn là muốn xóa dữ liệu này?')"><i class="icon-ban-circle icon-white"></i></a>
+                    </td>
+                </tr>
+                
+                {if $values.children}
+                    {foreach $values.children as $val}
+                             <tr>
+                                <td colspan="{$val.level}"></td>
+                                <td style="width: 60px;border-left: none;">{$k + 1}.{$i + 1}.{$val.order}</td>
+                                <td colspan="{($col_total - 1 - $val.level)}">{$val.text}</td>
+                                <td>
+                                        <a class="btn btn-success js_edit" href="category/edit/{$val.id}"><i class="icon-edit icon-white"></i></a>
+                                        <a href="{admin_url()}category/index/del/{$val.id}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn là muốn xóa dữ liệu này?')"><i class="icon-trash icon-white"></i></a>
+                                </td>
+                            </tr>
+                        {/foreach}
+                {/if}
+                
+            {/foreach}
+        {/if}
+    {/foreach}    
+    </tbody>
+</table>
+
+<div class="fix"></div>

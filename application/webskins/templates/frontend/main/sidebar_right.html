@@ -1,0 +1,36 @@
+<div id="sidebar2">
+            <div>
+                <h3 align="center">Hỗ trợ</h3>
+                <ul class="style2">
+                    <li class="first">
+                        <a mce_href="ymsgr:sendim?demo" href="ymsgr:sendim?demo">
+                            <img src="http://opi.yahoo.com/online?u=demo&;m=g&;t=2" border=0 height=”25″ width=”110″ >
+                        </a>
+                        <h4>MR Tâm<br/> Hotline : 0902270313<br/>Email : abc@gmail.com</h4>
+                    </li>
+                    <li>
+                        <h3>Sản phẩm nổi bật</h3>
+                        <div class="">
+                            <ul class="small-product">
+                            {foreach from=$list_hot item=hot}
+                                <li>
+                                    <a href="{detail_product($hot.id,$hot.name)}">
+                                        <img src="{$hot.img_url}">
+                                    </a>
+                                    <p><a href="{detail_product($hot.id,$hot.name)}">{$hot.name|truncate:18}</a><br/>
+                                        Giá : {$hot.price|money_format} VNĐ
+                                    </p>
+                                </li>
+                            {/foreach}  
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Tamnguyen Consult,jsc</h3>
+                        <p>
+                            <img src="{$skin_front}/images/logo.png" width="230">
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>

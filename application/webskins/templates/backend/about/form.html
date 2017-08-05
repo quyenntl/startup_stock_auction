@@ -1,0 +1,33 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> {if $id}Sửa ảnh{else}Thêm ảnh{/if}
+</h6>
+
+<a href="{site_url("admin/about")}" class="btn btn-success" style="float: right; margin-top: 12px; margin-left: 19px;"><i class="icon-th-list icon-white"></i> Danh sách</a>
+<div class="row-fluid">
+	<div class="span12">
+		{if $notice}
+		<div class="alert alert-success"><button data-dismiss="alert" class="close" type="button">×</button>{$notice}</div>
+		{/if}
+		{$form_edit}
+
+			<input type="hidden" value="{$id}" name="id"/>			    
+    
+            <label>Miêu tả</label>
+            <textarea name="description" style="width: 450px;height:50px;">{$data.description}</textarea>
+            
+            <label>Ảnh đại diện</label>
+            <input type="file" name="image" />
+            {if $data.image}
+            <img src="{store_data_url()}img_about/{$data.image}" width="80" height="80" />
+            {/if}
+                        
+		    <label class="checkbox">
+		      	<input type="checkbox" name="status" value="1"{if $data.active == 1} checked="checked"{/if} /> Hoạt động
+		    </label>
+		    <div class="control-group" style="text-align: center">
+    			<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Lưu</button>
+		    </div>
+		</form>
+	</div>
+</div>
+<div class="fix"></div>

@@ -1,0 +1,56 @@
+<main class="content" role="main" itemprop="mainContentOfPage">
+    {foreach from=$info_product item=detail}
+    <div id="product-detail">
+        <h1 class="heading" style="margin-bottom: 15px;">{$detail.name}</h1>
+        <div class="Information">
+            <div class="anhspsp">
+                <a class="click-zoom" href="{$detail.img_url}" title="ECOSPORT TREND AT">
+                    <img src="{$detail.img_url}" class="attachment-medium size-medium wp-post-image">
+                </a>
+            </div>
+            <div class="thongso">
+                <ul>
+                    <li>
+                        <span class="left">Giá</span>
+                        <span class="right">
+                       {$detail.price|money_format} VNĐ</span>
+                    </li>
+
+                    <li>
+                        <span class="left">Giá khuyến mãi</span>
+                        <span class="right">
+                        {$detail.price_sale|money_format} VNĐ</span>
+                    </li>
+                    <li>
+                        <span class="left" style="width: 380px;">Bạn hãy để lại số điện thoại <a href="{contact_url()}" style="color: blue;">tại đây </a>để biết thông tin mức giá sản phẩm tại tời điểm này. Xin cảm ơn quý khách!</span>
+                        <span class="right">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+        <div class="entry-content">
+            {$detail.content}
+        </div>
+    </div>
+    {/foreach}
+    <div id="related-product">
+        <h4 class="heading">Sản Phẩm Liên Quan</h4>
+        <ul class="product-list">
+        {foreach from=$other_product item=one}
+            <li class="product-item">
+                <div class="product-img">
+                    <a class="img" title="ECOSPORT TREND MT" href="{detail_product($one.id,$one.name)}">
+                        <img src="{$one.img_url}" class="attachment-medium size-medium wp-post-image" alt="{$one.name}" width="300" height="224">
+                    </a> 
+                </div>
+                <a class="product-title" href="{detail_product($one.id,$one.name)}" title="{$one.name}">{$one.name}</a>
+                <p class="price  gachngang">{$one.price|money_format} VNĐ</p>
+                <p class="price">{$one.price_sale|money_format} VNĐ</p><a class="detail" href="{detail_product($one.id,$one.name)}" title="Chi tiết">Chi tiết</a>
+            </li>
+        {/foreach}
+        </ul>
+    </div>
+</main>

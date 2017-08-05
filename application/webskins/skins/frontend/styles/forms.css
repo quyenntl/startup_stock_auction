@@ -1,0 +1,232 @@
+/*
+Template Name: News Magazine
+File: Forms CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:12px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+/* ----------------------------------------------Search Form-------------------------------------*/
+
+#topbar input{
+	display:block;
+	float:left;
+	width:155px;
+	margin:0 5px 0 0;
+	padding:5px;
+	color:#B6B6B6;
+	background-color:#525252;
+	border:1px solid #343434;
+	font-size:12px;
+	}
+
+#topbar input#go{
+	width:68px;
+	height:26px;
+	margin:0;
+	padding:4px 0;
+	text-transform:uppercase;
+	color:#FFFFFF;
+	background-color:#059BD8;
+	border-color:#396B86;
+	cursor:pointer;
+	font-weight:bold;
+	}
+
+/* ----------------------------------------------Forms in Content Area-------------------------------------*/
+
+.container #respond{display: block; width:100%;}
+
+.container #respond input{width:154px; padding:2px; border:1px solid #CCCCCC; margin:0px 5px 0 0;}
+
+.container #respond textarea{width:98%; border:1px solid #CCCCCC; padding:2px; overflow:auto;}
+	
+.container #respond p{margin:5px 0;}
+
+.container #respond .bt-submit, .container #respond .bt-reset{
+	margin:0;
+	padding:5px;
+	color:#666666;
+	background-color:#F7F7F7;
+	border:1px solid #CCCCCC;
+	cursor:pointer;
+    font-weight:bold;
+	}
+
+/* ----------------------------------------------Newsletter-------------------------------------*/
+
+#socialise form{
+	display:block;
+	width:300px;
+	margin:0;
+	padding:10px 0 0 0;
+	border:none;
+	}
+
+#socialise input{
+	display:block;
+	width:218px;
+	margin:0 0 10px 0;
+	padding:5px;
+	color:#FFFFFF;
+	background-color:#2684B7;
+	border:1px solid #1C5E82;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}
+
+#socialise input#newsletter_go{
+	width:58px;
+	height:62px;
+	margin:0;
+	padding:0;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:60px;
+	cursor:pointer;
+	}
+.label-left{
+    width:80px;
+    float:left                            
+} 
+.error {
+    color:red;
+}
+.resetPassSussce {
+    background: none repeat scroll 0 0 #EFFEB9;
+    border: 1px solid #97C701;
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.pageCont h3 {
+    background: url("../images/lines.gif") repeat-x scroll left 15px transparent !important;
+    font-size: 140% !important;
+    height: 40px;
+    margin: 0 20px 10px;
+}
+
+
+i.iconSussces {
+    background: url("../images/popup-icon.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 30px;
+    line-height: 300%;
+    margin-right: 20px;
+    vertical-align: text-bottom;
+    width: 30px;
+}
+
+.resetPassError {
+    background: none repeat scroll 0 0 #FCCAC1;
+    border: 1px solid #EB5439;
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+i.iconSussces {
+    background-position: -1px -101px;
+}
+.resetPassError i.iconSussces {
+    background-position: -1px -133px;
+}
+.ui-datepicker-trigger{
+    display:inline;
+}
+#ui-datepicker-div{
+    z-index:99999 !important;
+}
+.button-des {
+	-moz-box-shadow:inset 0px 0px 0px 0px #dcecfb;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #dcecfb;
+	box-shadow:inset 0px 0px 0px 0px #dcecfb;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea) );
+	background:-moz-linear-gradient( center top, #bddbfa 5%, #80b5ea 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddbfa', endColorstr='#80b5ea');
+	background-color:#bddbfa;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:2px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 36px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+}.button-des:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #80b5ea), color-stop(1, #bddbfa) );
+	background:-moz-linear-gradient( center top, #80b5ea 5%, #bddbfa 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80b5ea', endColorstr='#bddbfa');
+	background-color:#80b5ea;
+}.button-des:active {
+	position:relative;
+	top:1px;
+}
+
+.button-denied {
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bdb7bd) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #bdb7bd 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bdb7bd');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:2px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 36px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.button-denied:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bdb7bd), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #bdb7bd 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bdb7bd', endColorstr='#ededed');
+	background-color:#bdb7bd;
+}.button-denied:active {
+	position:relative;
+	top:1px;
+}
+
+.view-calendar {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #0c1bc7) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #0c1bc7 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#0c1bc7');
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:24px;
+	font-weight:bold;
+	padding:6px 22px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;    
+}.view-calendar:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0c1bc7), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #0c1bc7 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0c1bc7', endColorstr='#79bbff');
+	background-color:#0c1bc7;
+}.view-calendar:active {
+	position:relative;
+	top:1px;
+}

@@ -1,0 +1,118 @@
+<section id="nav_menu-2" class="widget widget_nav_menu">
+            <div class="widget-wrap">
+                <h4 class="widget-title widgettitle">Danh mục sản phẩm</h4>
+                <div class="menu-danh-muc-san-pham-container">
+                    <ul id="menu-danh-muc-san-pham" class="menu">
+                    {foreach from=$list_category item=cate}
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="{$cate.link_detail}">{$cate.name}</a></li>
+                    {/foreach}
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="support-online-2" class="widget support-online-widget">
+            <div class="widget-wrap">
+                <h4 class="widget-title widgettitle">Hỗ trợ trực tuyến</h4>
+                <div class="wrap-support">
+                    <div id="supporter-info">
+                        <div id="support-1" class="supporter">
+                            <div class="info">
+                                <a onclick="goog_report_conversion('tel:0945488866')" class="phone" href="#">0945 488 866</a>
+                            </div>
+                            <div class="online">
+                            </div>
+                        </div>
+                        <div id="support-1" class="supporter">
+                            <div class="info">
+                                <a onclick="goog_report_conversion('tel:0911777866')" class="phone" href="#">0911 777 866</a>
+                            </div>
+                            <div class="online">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+        <section id="featured-post-2" class="widget featured-content featuredpost">
+            <div class="widget-wrap">
+                <h4 class="widget-title widgettitle">Tin tức</h4>
+                {foreach from=$list_news item=news}
+                <article class="tin-tuc type-tin-tuc status-publish format-standard has-post-thumbnail danhmuc-tin-tuc entry">
+                    <a href="{detail_new($news.id,$news.title)}" title="{$news.title}" class="alignleft">
+                        <img src="{store_data_url()}news/{$news.image}" class="entry-image attachment-tin-tuc" alt="ford vietnam" width="200" height="200">
+                    </a>
+                    <header class="entry-header">
+                        <h2 class="entry-title">
+                            <a href="{detail_new($news.id,$news.title)}" title="{$news.title}">{$news.title}</a>
+                        </h2>
+                    </header>
+                </article>
+                {/foreach}
+            </div>
+        </section>
+        <!--section id="facebook-like-widget-2" class="widget facebook_like">
+            <div class="widget-wrap">
+                <h4 class="widget-title widgettitle">Like Facebook</h4>
+                <script>(function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (d.getElementById(id)) return;
+                      js = d.createElement(s); js.id = id;
+                      js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1";
+                      fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+                <div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/kidspacehn/" data-height="239" data-width="233" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" allowtransparency="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;color_scheme=light&amp;container_width=233&amp;header=false&amp;height=239&amp;href=https%3A%2F%2Fwww.facebook.com%2FIQFact%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=233">
+                    <span style="vertical-align: bottom; width: 233px; height: 230px;">
+                        Đặt tại đây
+                    </span>
+                </div>
+            </div>
+        </section-->
+
+
+<!--div id="sidebar1">
+            <div id="box1">
+                <h4 align="center">DANH MỤC SẢN PHẨM</h4>
+                <ul class="style1">
+                {foreach from=$list_category item=cate}
+                    <li class="{if $cate.i == 0}first{else} {/if}"><a href="{$cate.link_detail}">{$cate.name} ></a></li>
+                {/foreach}
+                </ul>
+            </div>
+            <div id="box2">
+                <h4 align="center">CHÚNG TÔI INTERNET</h4>
+                <ul class="style1">
+                    <li class="first">
+                        <a href="javascript:;"><img src="{$skin_front}/images/fb.png"></a>
+                        <a href="javascript:;"><img src="{$skin_front}/images/google.png"></a>
+                        <a href="javascript:;"><img src="{$skin_front}/images/Twitter.png"></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="box2">
+                <h4 align="center">HOẠT ĐỘNG</h4>
+                <ul class="style1">
+                {foreach from=$list_news item=news}
+                    <li class="{if $news.i==0}first{else} {/if}"><a href="{detail_new($news.id,$news.title)}">{$news.title|truncate:30}</a></li>
+                {/foreach}
+                </ul>
+            </div>
+            <div id="box2">
+                <h4 align="center">TIN VIDEO</h4>
+                <ul class="style1" style="margin-left:5px;">
+                    <li class="first">
+                        <iframe width="200" height="150" src="http://www.youtube.com/embed/MGYJ3cVynY4" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                </ul>
+            </div>
+            <div id="box2">
+                <h4 align="center">THÔNG SỐ</h4>
+                <ul class="style1" style="margin-left:5px;">
+                    <li class="first">
+                        <li>Online : 100</li>
+                        <li>Lượt xem : 467</li>
+                    </li>
+                </ul>
+            </div>
+        </div-->

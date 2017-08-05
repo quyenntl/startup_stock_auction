@@ -1,0 +1,114 @@
+ul.listBankLogo{display:block;list-style:none outside none;}
+ul.listPartner li {
+    float: left;
+    height: 35px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+a.bankIcon{ background:url(./images/bankIcon.png) no-repeat; width:69px; height:30px; display:block;}
+a.vietinBank{ background-position:0px 0px;}
+a.vietinBank:hover{ background-position:-69px 0px;}
+a.vietinBank:active,a.vietinBank.active{ background-position:-138px 0px;}
+
+a.vietComBank{ background-position:0px -30px;}
+a.vietComBank:hover{ background-position:-69px -30px;}
+a.vietComBank:active, a.vietComBank.active{ background-position:-138px -30px;}
+
+a.vibBank{ background-position:0px -60px;}
+a.vibBank:hover{ background-position:-69px -60px;}
+a.vibBank:active, a.vibBank.active{ background-position:-138px -60px;}
+
+a.techComBank{ background-position:0px -90px;}
+a.techComBank:hover{ background-position:-69px -90px;}
+a.techComBank:active, a.techComBank.active{ background-position:-138px -90px;}
+
+a.sacomBank{ background-position:0px -120px;}
+a.sacomBank:hover{ background-position:-69px -120px;}
+a.sacomBank:active, a.sacomBank.active{ background-position:-138px -120px;}
+
+a.mbBank{ background-position:0px -150px;}
+a.mbBank:hover{ background-position:-69px -150px;}
+a.mbBank:active,a.mbBank.active{ background-position:-138px -150px;}
+
+a.hdBank{ background-position:0px -180px;}
+a.hdBank:hover{ background-position:-69px -180px;}
+a.hdBank:active,a.hdBank.active{ background-position:-138px -180px;}
+
+a.eximBank{ background-position:0px -210px;}
+a.eximBank:hover{ background-position:-69px -210px;}
+a.eximBank:active,a.eximBank.active{ background-position:-138px -210px;}
+
+a.dongaBank{ background-position:0px -240px;}
+a.dongaBank:hover{ background-position:-69px -240px;}
+a.dongaBank:active,a.dongaBank.active{ background-position:-138px -240px;}
+
+a.jcbBank{ background-position:0px -270px;}
+a.jcbBank:hover{ background-position:-69px -270px;}
+a.jcbBank:active,a.jcbBank.active{ background-position:-138px -270px;}
+
+a.acbBank{ background-position:0px -300px;}
+a.acbBank:hover{ background-position:-69px -300px;}
+a.acbBank:active,a.acbBank.active{ background-position:-138px -300px;}
+
+a.americanBank{ background-position:0px -330px;}
+a.americanBank:hover{ background-position:-69px -330px;}
+a.americanBank:active, a.americanBank.active{ background-position:-138px -330px;}
+
+a.visa{ background-position:0px -360px;}
+a.visa:hover{ background-position:-69px -360px;}
+a.visa:active, a.visa.active{ background-position:-138px -360px;}
+
+a.master{ background-position:0px -390px;}
+a.master:hover{ background-position:-69px -390px;}
+a.master:active, a.master.active{ background-position:-138px -390px;}
+
+a.pgBank{ background-position:0px -420px;}
+a.pgBank:hover{ background-position:-69px -420px;}
+a.pgBank:active, a.pgBank.active{ background-position:-138px -420px;}
+
+a.tienphongBank{ background-position:0px -450px;}
+a.tienphongBank:hover{ background-position:-69px -450px;}
+a.tienphongBank:active, a.tienphongBank.active{ background-position:-138px -450px;}
+
+a.siaBank{ background-position:0px -480px;}
+a.siaBank:hover{ background-position:-69px -480px;}
+a.siaBank:active, a.siaBank.active{ background-position:-138px -480px;}
+
+a.shbBank{ background-position:0px -510px;}
+a.shbBank:hover{ background-position:-69px -510px;}
+a.shbBank:active, a.shbBank.active{ background-position:-138px -510px;}
+
+a.sacomBank{ background-position:0px -540px;}
+a.sacomBank:hover{ background-position:-69px -540px;}
+a.sacomBank:active, a.sacomBank.active{ background-position:-138px -540px;}
+
+a.mariTimeBank{ background-position:0px -570px;}
+a.mariTimeBank:hover{ background-position:-69px -570px;}
+a.mariTimeBank:active, a.mariTimeBank.active{ background-position:-138px -570px;}
+
+a.agriBank{ background-position:0px -600px;}
+a.agriBank:hover{ background-position:-69px -600px;}
+a.agriBank:active, a.agriBank.active{ background-position:-138px -600px;}
+
+a.bidvBank{ background-position:0px -630px;}
+a.bidvBank:hover{ background-position:-69px -630px;}
+a.bidvBank:active, a.bidvBank.active{ background-position:-138px -630px;}
+
+a.fasteBank{ background-position:0px -660px;}
+a.fasteBank:hover{ background-position:-69px -660px;}
+a.fasteBank:active, a.fasteBank.active{ background-position:-138px -660px;}
+
+a.visaTechBank{ background-position:0px -690px;}
+a.visaTechBank:hover{ background-position:-69px -690px;}
+a.visaTechBank:active, a.visaTechBank.active{ background-position:-138px -690px;}
+
+a.vpBank{ background-position:0px -720px;}
+a.vpBank:hover{ background-position:-69px -720px;}
+a.vpBank:active, a.vpBank.active{ background-position:-138px -720px;}
+	
+.logoMove{display: block;}
+.logoMove .itemLogo {
+    float: left;
+    margin-right:25px;
+    width: 80px;
+}	

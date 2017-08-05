@@ -1,0 +1,49 @@
+<h6 class="title" style=" width: 78%; float: left; ">
+    <i class="icon-edit"></i> {if $id}Sửa sản phẩm{else}Thêm sản phẩm{/if}
+</h6>
+
+<a href="{site_url("admin/products")}" class="btn btn-success" style="float: right; margin-top: 12px; margin-left: 19px;"><i class="icon-th-list icon-white"></i> Danh sách</a>
+<div class="row-fluid">
+	<div class="span12">
+		{if $notice}
+		<div class="alert alert-success"><button data-dismiss="alert" class="close" type="button">×</button>{$notice}</div>
+		{/if}
+		{$form_edit}
+
+			<input type="hidden" value="{$id}" name="id"/>
+			<label>Tiêu đề</label>
+		    <input type="text" id="title" value="{$data.name}" name="title" class="span6"/>
+
+		    <label>Link video</label>
+		    <input type="text" id="link_video" value="{$data.link_video}" name="link_video" class="span6" />
+
+		    <label>Giá niêm yết</label>
+		    <input type="text" id="price" value="{$data.price}" name="price" size="5" /> (VND)
+            
+            <label>Giá đã giảm</label>
+		    <input type="text" id="price_sale" value="{$data.price_sale}" name="price_sale" size="5" /> (VND)
+    		
+		    <label>Danh mục</label>
+            <select name="guide_category_id" id="guide_category_id">
+                {foreach from = $category_list item = item key = key}
+                <option value="{$key}"{if $key == $data.cate_id}selected="selected"{/if}>{$item}</option>
+                {/foreach}
+            </select>
+            <label>Miêu tả</label>
+            <textarea name="description" style="width: 450px;height:50px;">{$data.description}</textarea>
+            
+            <label>Ảnh đại diện</label>
+            <input type="file" name="image" />
+            {if $data.image}
+            <img src="{store_data_url()}products/{$data.image}" width="80" height="80" />
+            {/if}
+            <label>Nội dung</label>
+		    <textarea id="content" name="content" class="span9 editor">{$data.content}</textarea>
+		
+		    <div class="control-group" style="text-align: center">
+    			<button class="btn btn-success guide-cat-add"><i class="icon-ok icon-white"></i> Lưu</button>
+		    </div>
+		</form>
+	</div>
+</div>
+<div class="fix"></div>

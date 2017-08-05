@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h5>Edit template</h5>
+</div>
+{$form}
+    <div class="modal-body">        
+        <div style="margin-bottom: 10px;"></div>
+        <div class="row-fluid">
+            <div class="span10">
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <input type="text" style="width:300px;" value="{$data.name}" name="name" placeholder="Name" required />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="input-prepend">                            
+                        <textarea name="description" placeholder="Description"style="width: 300px;" required="" >{$data.description}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <input type="hidden" value="{$data.id}" name="u_id"/>
+    </div>
+    <div class="modal-footer">
+        <div class="result-update" style="float: left; width: 330px; margin-bottom: 0px; text-align: left;">
+        </div>
+        <button href="javascript:;" class="btn btn-success save-click">Update</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</form>

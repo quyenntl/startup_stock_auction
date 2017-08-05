@@ -1,0 +1,99 @@
+<h6 class="title">
+    <i class="icon-user"></i>
+    Admin Config
+</h6>
+    <div class="fix"></div>
+    <!--<a href="{site_url("admin/config_sys/form")}" class="btn btn-success" style="margin-bottom: 12px;"><i class="icon-plus icon-white"></i> Add new</a>-->
+<div class="box-content">    
+    <div class="search-form">
+        <form class="form-horizontal">
+			
+            <div class="span6">	
+				 <div class="control-group">
+                    <label class="control-label col-sm-4 " for="mobiphone_s">Số cổ phần muốn điều chỉnh: </label>
+                    <div class="controls">
+						<input type="text" name="tmp_num_stock" id="tmp_num_stock" value="{$tmp_num_stock}" />
+                    </div>
+                </div>			
+            </div>
+				<div class="control-group">
+               <div class="controls">
+                    <button type="submit" class="btn btn-success"><i class="icon-search icon-white"></i> Preview</button>
+                    <button type="button" class="btn btn-success update-config"><i class="icon-check icon-white"></i> Save</button>
+                </div></div>
+        </form>
+    </div>
+</div>
+
+{if $total_stock_tmp}
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Danh sách nhà đầu tư được khớp lệnh</h4></div>
+  </div>
+<table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Mã NĐT</th>
+            <th>Giá</th>
+			<th>Trị giá</th>
+            <th>Số CP</th>           
+        </tr>
+    </thead>
+
+    <tbody>
+        {foreach from = $data item = item key = key}
+        <tr>
+            <td>{$item.user_code}</td>
+            <td>{$item.price*1000|number_format:0:".":"."}</td>
+			<td>{($item.price *1000* $item.num_stocks )|number_format:0:".":"."}</td>
+            <td>{$item.num_stocks}</td>
+            <!--<td>{$item.time_created|date_format:"%H:%M:%S"}</td>-->
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{else}
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th><i class="icon-book"></i> Name</th>
+            <th>Key</th>
+            <th> Value</th>          
+            <th> Time created</th>           
+            <th style="width: 128px;"><i class="icon-wrench"></i> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = item key = key}
+        <tr>
+            <td>{$offset + $key +1}</td>
+            
+            <td>{$item.name} </td>
+            <td>{$item.key} </td>                       
+            <td>{$item.value} </td>          
+            <td>{$item.time_created|date_format:"%d/%m/%y %H:%M:%S"}</td> 
+           
+            <td>
+                <a href="admin/config_sys/form/{$item.id}" class="btn btn-info"><i class="icon-edit icon-white"></i></a>               
+
+                <a href="{site_url('admin/config_sys')}?cmd=del&id={$item.id}" title="Delete" onclick="if(!confirm('Do you want to delete?')) return false;" class="btn lock btn-danger" data-placement="top" rel="tooltip" data-original-title="Delete"><i class="icon-lock icon-white"></i></a>
+                                
+                
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+{/if}		
+	
+
+<div class="fix"></div>
+<div style="text-align:right; color: #0088CC">
+    <i class="icon-list-alt"></i>Total: {$total_data}
+</div>
+<div class="fix"></div>

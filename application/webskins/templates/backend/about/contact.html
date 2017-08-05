@@ -1,0 +1,44 @@
+<h6 class="title">
+    <i class="icon-user"></i>
+    Liên hệ khách hàng
+</h6>
+<table class="table table-bordered table-striped tablesorter">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Nội dung</th>
+            <th>Thời gian tạo</th>
+            <th style="width: 128px;"><i class="icon-wrench"></i> Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        {foreach from = $data item = item key = key}
+        <tr>
+            <td>{$offset + $key +1}</td>
+            <td>{$item.name}</td>
+            <td>{$item.name}</td>
+            <td>{$item.name}</td>
+            <td  class="blue editable" lang="{$item.id}">
+                    {$item.ordering}            
+            </td>
+            <td>{$item.time_create|date_format:"%d/%m/%y %H:%M:%S"}</td>            
+            <td>
+                
+            </td>
+        </tr>
+        {/foreach}
+    </tbody>
+</table>
+{if $paging}
+<div class="pagination">
+    {$paging}
+</div>
+{/if}
+<div class="fix"></div>
+<div style="text-align:right; color: #0088CC">
+    <i class="icon-list-alt"></i> Tổng số: {$total_data} kết quả
+</div>
+<div class="fix"></div>

@@ -1,0 +1,18 @@
+<main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope">
+        {foreach from=$info_news item=detail}
+        <h1 class="entry-title">{$detail.title}</h1>
+        <div class="entry-content">
+            {$detail.content}
+       </div>
+        {/foreach}
+        <div id="related-post">
+            <h4 class="heading">Tin Liên Quan</h4>
+            <ul>         
+            {foreach from=$other_news item=news}   
+                <li>
+                    <a href="{detail_new($news.id,$news.title)}" title="Đánh giá xe Ford Focus 2016 từ các chuyên gia">{$news.title}</a>
+                </li>
+            {/foreach}
+            </ul>
+        </div>
+</main>

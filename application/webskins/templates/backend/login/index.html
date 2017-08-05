@@ -1,0 +1,33 @@
+<div style="width:350px; margin: 0 auto; margin-top: 30px;">
+    <div class="widget_login">
+
+        <br />
+        <span id="alerts" style="display: inline-block;height: 40px;margin: 17px 0 0;padding: 0;width: 100%;display: none;"></span> {$begin_form}
+        <div class="control-group" style="text-align: center;">
+
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input class="span8" id="prependedInput" value="{$username}" required="" name="username" type="text" placeholder="Username" />
+                </div>
+            </div>
+
+
+            <div class="controls" style="margin: 20px 0;">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-question-sign"></i></span>
+                    <input class="span8" id="prependedInput" required="" name="password" type="password" placeholder="Password" />
+                </div>
+            </div>
+
+            <button type="submit" class="large green button radius" id="submit_login" style="width: 230px">Login</button>
+
+        </div>
+        {$close_form}
+        <hr/>
+    </div>
+</div>
+<input type="hidden" name="comeback_url" id="comeback_url" value="{$comeback_url}" />
+<input type="hidden" id="url_img" value="{$skin_url}" />
+<input type="hidden" id="current_url" value="{site_url('admin')}" />
+<div class="copyright" style="text-align: center; border-top: 1px solid #ccc; padding-top:10px; width:350px; margin: 0 auto;"><span style="text-transform: uppercase; font-weight: bold;">© Admin 2017</span> <br/></div>

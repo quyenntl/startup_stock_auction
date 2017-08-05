@@ -1,0 +1,58 @@
+html{margin:0;}
+body{margin:0;}
+div.widgetVer a img { border:none; }
+div.widgetVer a { color:#0072bc; text-decoration:none; outline:none; }
+div.widgetVer a:hover { color:#0072bc; text-decoration:underline; cursor:pointer; }
+div.widgetVer a.active { color:#0000cc; }
+.clearfix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; overflow: hidden; }
+.clearfix { display:inline-block; }
+* html .clearfix { height:1%; }
+.clearfix { display:block; }
+.clear { clear:both; }
+
+div.widgetVer {font-family:Arial, Helvetica, sans-serif;font-size:11px;border:1px solid #d7d7d7;border-top:none;overflow:hidden}
+div.wh131 {width:131px;}
+div.wh990 {width:990px;border-top:1px solid #d7d7d7;}
+div.widgetVer h2 {background:#f4f4f4;height:22px;line-height:22px;border-left:4px solid #e89006;margin:0;padding:0 0 0 3px;font-size:11px;font-weight:normal;color:#707070;}
+div.widgetVer h2 a.logo {background:url(images/logo.png) no-repeat left 3px;display:block;width:40px;height:15px;padding-top:4px;}
+div.widgetVer h2 a.logo:hover {text-decoration:none;}
+
+
+div.itemWidget ul {margin:0;padding:0;list-style:none;}
+div.itemWidget ul li {border-bottom:1px solid #f2f2f2;padding:5px;margin-bottom:10px;}
+div.itemWidget ul li.last {border-bottom:none;}
+.orangeBold {font-weight:bold;color:#f94600;}
+div.itemWidget h3 {font-size:11px;margin:0 0 5px 0;padding:0;}
+div.itemWidget p {margin:0 0 5px 0;}
+div.itemWidget p.img {width:90px;margin:0 auto 5px;}
+div.itemWidget h3 a {color:#333;}
+span.imgCenter {width:90px;height:90px;display:table-cell;vertical-align:middle;text-align:center;}
+div.wh990 ul li {float:left;width:236px;border-bottom:none;border-right:1px solid #f2f2f2;margin:0;padding:7px 5px;}
+div.wh990 ul li.last {border-right:none;}
+div.itemWidget p.flImg {float:left;margin:0 5px 0 0;}
+div.itemWidget {clear:both;display:inline-block;overflow:hidden;}
+div.wh990 h2 a.logo {float:left;}
+div.widgetVer h2.headingHoz {background:url(images/bg-heading.gif) repeat-x left top;height:32px;line-height:normal;border-top:1px solid #dedede;}
+div.widgetVer h2.headingHoz a.logo {padding-top:10px;background-position:0 9px;}
+div.newsletter {float:right;padding:4px 10px;}
+span.iconEmail {background:url(images/email.gif) no-repeat left top;display:block;width:15px;height:11px;float:left;margin:7px 0 0 0;}
+input.textEmail {background:url(images/bg-input.gif) repeat-x left top;height:20px;border:1px solid #dedede;float:left;margin-left:5px;width:235px;color:#999;}
+input.btn-Regis {background:url(images/btn-regis.gif) no-repeat left top;border:none;width:84px;height:24px;float:left;margin-left:5px;cursor:pointer;}
+
+
+div.wh500 {width:500px;border-top:1px solid #D7D7D7;}
+div.wh500 div.newsletter {float:left;}
+div.wh500 h2.headingHoz {border:none;border-top:1px solid #dedede;}
+div.WScreen ul {margin:0;padding:0;list-style:none;}
+div.WScreen ul li {padding:10px;}
+div.WScreen ul li h3, div.WScreen ul li p {margin:0 0 5px 0;}
+div.WScreen ul li p.flImg img {background:#FFF;padding:3px;border:1px solid #e0e0e0;}
+div.WScreen ul li p.flImg {float:left;margin:0 10px 0 0;position:relative;}
+span.discount {background:url(images/discount.png) no-repeat left top;display:block;width:71px;height:52px;position:absolute;right:-5px;top:-5px;text-align:center;color:#ef4423;padding-top:18px;}
+span.discount b.big {font-size:16px;}
+span.discount b.small {font-size:10px;}
+div.WScreen ul li h3 {font-size:15px;font-weight:normal;margin:0 0 15px 0;}
+div.WScreen ul li p {font-size:13px;color:#666;margin:0;}
+div.WScreen ul li p.detail {margin:10px 0 0 0;}
+div.WScreen ul li span.priceBold {color:#f17300;font-size:18px;font-weight:bold;}
+a.viewDetail {background:url(images/icnArrow.gif) no-repeat left top;padding:1px 0 1px 15px;font-weight:bold;}
